@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('check-queue',function(){
+   Mail::to('shafihaque7@gmail.com')->send(new TestMail());
+   return 'working';
+});
